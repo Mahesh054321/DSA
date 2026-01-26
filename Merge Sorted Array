@@ -1,0 +1,46 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+                
+        //brute force
+
+// for(int i=0; i<n; i++)
+// {
+//     nums1[m+i] = nums2[i]; 
+// }
+//     Arrays.sort(nums1);
+//     }
+
+//optimize approach
+int i=0;
+int j=0;
+int inx = 0;
+int[] newArr = new int[m+n];
+while(i<m && j<n)
+{
+    if(nums1[i] <= nums2[j])
+    {
+        newArr[inx] = nums1[i];
+        i++;
+        inx++;
+    }
+    else
+    {
+        newArr[inx] = nums2[j];
+        j++;
+        inx++;
+    }
+    } 
+        while(i<m)
+    {
+        newArr[inx++] = nums1[i++];
+    }
+    while(j<n)
+    {
+        newArr[inx++] = nums2[j++];
+    }
+    for(int k=0; k<newArr.length; k++)
+    {
+        nums1[k] = newArr[k];
+    }
+    }
+}
