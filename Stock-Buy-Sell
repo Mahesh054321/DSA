@@ -1,0 +1,22 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+     int buy_day = prices[0];
+     int currpr = 0;
+     int maxpr = 0;
+     for(int i=0; i<prices.length; i++)
+     {
+        if(buy_day>prices[i])
+        {
+            buy_day = prices[i];
+        }
+        else {
+            currpr = prices[i] - buy_day;
+        if(currpr > maxpr)
+        {
+            maxpr = currpr;
+        }
+        }
+     }
+     return maxpr;   
+    }
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
